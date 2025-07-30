@@ -36,32 +36,15 @@
 
         .particle {
             position: absolute;
-            background-color: rgba(255, 255, 255, 0.7);
-            border-radius: 50%;
             opacity: 0;
             animation: drift 20s infinite linear;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(239, 137, 151, 0.5);
-        }
-
-        .particle.pink {
-            background-color: rgba(255, 182, 193, 0.6);
-            box-shadow: 0 0 10px rgba(255, 182, 193, 0.6), 0 0 20px rgba(255, 255, 255, 0.5);
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
         }
 
         @keyframes drift {
-            0% {
-                transform: translateY(110vh) scale(0);
-                opacity: 1;
-            }
-
-            80% {
-                opacity: 1;
-            }
-
-            100% {
-                transform: translateY(-10vh) scale(1);
-                opacity: 0;
-            }
+            0% { transform: translateY(110vh) scale(0.8); opacity: 1; }
+            80% { opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
         }
 
         /* Main content container */
@@ -151,6 +134,21 @@
             right: -49px;
         }
 
+        #rotating-text {
+            margin-top: 40px;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #7c4d4d;
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+            transform: translateY(10px);
+        }
+
+        #rotating-text.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         /* Responsive design for smaller screens */
         @media (max-width: 768px) {
             h1 {
@@ -193,6 +191,9 @@
             You are the most amazing person I know. Your smile brightens my darkest days, and your love fills my life
             with endless joy. Thank you for being you. I love you more than words can say.
         </div>
+
+        <div id="rotating-text"></div>
+
     </div>
 
     <script>
@@ -204,25 +205,47 @@
                 const particle = document.createElement('div');
                 particle.classList.add('particle');
 
-                // Add pink class to roughly a third of the particles
-                if (Math.random() > 0.66) {
-                    particle.classList.add('pink');
-                }
+                // Use heart character instead of a div
+                particle.innerHTML = '♥';
+
+                // Randomize colors
+                const colors = ['rgba(255, 255, 255, 0.8)', 'rgba(255, 182, 193, 0.8)', 'rgba(255, 105, 180, 0.7)'];
+                particle.style.color = colors[Math.floor(Math.random() * colors.length)];
 
                 // Randomize properties for a natural, varied look
-                const size = Math.random() * 5 + 2; // size between 2px and 7px
+                const size = Math.random() * 10 + 8; // size between 8px and 18px
                 const startX = Math.random() * 100; // start position %
                 const duration = Math.random() * 15 + 10; // duration between 10s and 25s
                 const delay = Math.random() * 10; // delay up to 10s
 
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
+                particle.style.fontSize = `${size}px`;
                 particle.style.left = `${startX}%`;
                 particle.style.animationDuration = `${duration}s`;
                 particle.style.animationDelay = `-${delay}s`; // Negative delay starts animation partway through
 
                 particleContainer.appendChild(particle);
             }
+
+            const rotatingText = document.getElementById("rotating-text");
+            const messages = [
+                "You light up my world 💡",
+                "Forever and always 💖",
+                "You make every day special 🌸",
+                "My heart belongs to you 💌"
+            ];
+            let index = 0;
+
+            function rotateMessage() {
+                rotatingText.classList.remove("show");
+                setTimeout(() => {
+                    rotatingText.innerText = messages[index];
+                    rotatingText.classList.add("show");
+                    index = (index + 1) % messages.length;
+                }, 500);
+            }
+
+            rotateMessage();
+            setInterval(rotateMessage, 5000);
         });
     </script>
 
