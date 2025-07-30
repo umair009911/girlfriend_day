@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For My Love</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;400&display=swap"
+        rel="stylesheet">
     <style>
         /* General Styling */
-        body, html {
+        body,
+        html {
             margin: 0;
             padding: 0;
             width: 100%;
@@ -38,16 +42,26 @@
             animation: drift 20s infinite linear;
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(239, 137, 151, 0.5);
         }
-        
+
         .particle.pink {
             background-color: rgba(255, 182, 193, 0.6);
             box-shadow: 0 0 10px rgba(255, 182, 193, 0.6), 0 0 20px rgba(255, 255, 255, 0.5);
         }
 
         @keyframes drift {
-            0% { transform: translateY(110vh) scale(0); opacity: 1; }
-            80% { opacity: 1; }
-            100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+            0% {
+                transform: translateY(110vh) scale(0);
+                opacity: 1;
+            }
+
+            80% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-10vh) scale(1);
+                opacity: 0;
+            }
         }
 
         /* Main content container */
@@ -71,6 +85,7 @@
                 opacity: 0;
                 transform: translateY(50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -86,7 +101,8 @@
             color: #c2185b;
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
             animation: slideUpFadeIn 1.2s ease-out forwards;
-            opacity: 0; /* Start hidden */
+            opacity: 0;
+            /* Start hidden */
         }
 
         /* Subtitle text style */
@@ -96,8 +112,10 @@
             font-weight: 300;
             letter-spacing: 1px;
             color: #88655D;
-            animation: slideUpFadeIn 1.2s ease-out 0.5s forwards; /* 0.5s delay */
-            opacity: 0; /* Start hidden */
+            animation: slideUpFadeIn 1.2s ease-out 0.5s forwards;
+            /* 0.5s delay */
+            opacity: 0;
+            /* Start hidden */
         }
 
         /* Personal message section */
@@ -116,8 +134,10 @@
             border: 1px solid rgba(255, 255, 255, 0.5);
             line-height: 1.7;
             color: #5c3c40;
-            animation: slideUpFadeIn 1.2s ease-out 1s forwards; /* 1s delay */
-            opacity: 0; /* Start hidden */
+            animation: slideUpFadeIn 1.2s ease-out 1s forwards;
+            /* 1s delay */
+            opacity: 0;
+            /* Start hidden */
         }
 
         /* Flower bouquet image style */
@@ -126,7 +146,7 @@
             width: 120px;
             height: auto;
             pointer-events: none;
-            transform: rotate(15deg);
+            transform: rotate(23deg);
             top: -60px;
             right: -49px;
         }
@@ -136,22 +156,26 @@
             h1 {
                 font-size: 3rem;
             }
+
             p {
                 font-size: 1rem;
             }
+
             .personal-message {
                 font-size: 1rem;
                 padding: 25px;
                 margin-top: 40px;
             }
+
             .flower-bouquet {
                 width: 90px;
-                top: -30px;
-                right: -20px;
+                top: -47px;
+                right: -32px;
             }
         }
     </style>
 </head>
+
 <body>
 
     <!-- Container for floating particles -->
@@ -164,8 +188,10 @@
 
         <!-- Personal message area - you can edit this! -->
         <div class="personal-message">
-            <img src="./beautiful-spring-flowers-bouquet-with-bow-floral-branches-and-green-leaves-multicolored-blooming-botanical-element-for-designs-flat-illustration-isolated-on-white-background-vector-removebg-preview.png" alt="Flower Bouquet" class="flower-bouquet">
-            You are the most amazing person I know. Your smile brightens my darkest days, and your love fills my life with endless joy. Thank you for being you. I love you more than words can say.
+            <img src="./beautiful-spring-flowers-bouquet-with-bow-floral-branches-and-green-leaves-multicolored-blooming-botanical-element-for-designs-flat-illustration-isolated-on-white-background-vector-removebg-preview.png"
+                alt="Flower Bouquet" class="flower-bouquet">
+            You are the most amazing person I know. Your smile brightens my darkest days, and your love fills my life
+            with endless joy. Thank you for being you. I love you more than words can say.
         </div>
     </div>
 
@@ -201,4 +227,5 @@
     </script>
 
 </body>
+
 </html>
